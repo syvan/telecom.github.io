@@ -8,7 +8,7 @@
 </head>
 <body>
     <input type="file" id="file">
-
+    <em id="txt"></em>
     <script>
         $("#file").change(function(e) {
             var files = e.target.files;
@@ -67,7 +67,7 @@
                 var month = date.getMonth()+1;
                 var day = date.getUTCDate();
                 var str = "【"+month+"月"+day+"日狮山中心春暖行动】\n服务人数16人，服务组数8组，其中自有人员8人，上门服务客户"+shangmen+"户，铸铅"+zuqian+"户。\n业务成效：新装主卡"+zhuka+"户，其中315服务"+quanjia+"户，新装宽带"+kuangdai+"户，其中300M/500M新装"+Mkuangdai+"户，新装积分小计"+sum_xinzhuang+"，存量提档"+tidang+"户，4升5业务"+sishengwu+"户，存量提值小计"+sum_tidang+"，金融分期"+jinrong+"户，智能组网"+zuwang+"户，看家"+kanjia+"户，一次性费用收入"+yicixing+"元，合计折算积分"+sum_jifen.toFixed(2)+"，组均积分"+zufen.toFixed(2);
-                alert(str);
+                $("#txt").val = str;
             };
 
             // 以二进制方式打开文件
