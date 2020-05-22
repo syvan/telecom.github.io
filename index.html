@@ -75,10 +75,10 @@
                         kanjia = kanjia + parseInt(e["__EMPTY_14"]);
                         yicixing = yicixing + parseInt(e["__EMPTY_17"]);
                         sum_jifen = sum_jifen + sum_xinzhuang + sum_tidang + yicixing/12;
-                        zufen = zufen + sum_jifen/8;
                     }
                     
                 })
+                zufen = sum_jifen/8;
                 var date = new Date();
                 var month = date.getMonth()+1;
                 var day = date.getUTCDate();
