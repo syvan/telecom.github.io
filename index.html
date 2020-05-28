@@ -57,7 +57,7 @@
                 }
 
                 console.log(persons[1]);//打印获取的数据
-                var shangmen = zuqian = zhuka = kuangdai = Mkuangdai = sum_xinzhuang = quanjia = tidang = sishengwu = sum_tidang = jinrong = zuwang = kanjia = yicixing = sum_jifen = zufen = 0;
+                var shangmen = xuyue = yixiang = zuqian = zhuka = kuangdai = Mkuangdai = sum_xinzhuang = quanjia = tidang = sishengwu = sum_tidang = jinrong = zuwang = kanjia = yicixing = sum_jifen = zufen = 0;
                 persons.forEach((e,i)=>{
                     if(i>0&&i<9){
                         shangmen = shangmen + parseInt(e["__EMPTY_4"]);
@@ -69,6 +69,8 @@
                         quanjia = quanjia + parseInt(e["__EMPTY_13"]);
                         tidang = tidang + parseInt(e["__EMPTY_19"]);
                         sishengwu = sishengwu + parseInt(e["__EMPTY_21"]);
+                        xuyue = xuyue + parseInt(e["__EMPTY_22"]);
+                        yixiang = yixiang + parseInt(e["__EMPTY_26"]);
                         sum_tidang = sum_tidang + parseInt(e["__EMPTY_20"]);
                         jinrong = jinrong + parseInt(e["__EMPTY_12"]);
                         zuwang = zuwang + parseInt(e["__EMPTY_15"]);
@@ -78,11 +80,12 @@
                     }
                     
                 })
+                sum_jifen = sum_xinzhuang + sum_tidang + yicixing/12;
                 zufen = sum_jifen/8;
                 var date = new Date();
                 var month = date.getMonth()+1;
                 var day = date.getUTCDate();
-                str = "【"+month+"月"+day+"日狮山中心春暖行动】\n服务人数16人，服务组数8组，其中自有人员8人，上门服务客户"+shangmen+"户，铸铅"+zuqian+"户。\n业务成效：新装主卡"+zhuka+"户，其中315服务"+quanjia+"户，新装宽带"+kuangdai+"户，其中300M/500M新装"+Mkuangdai+"户，新装积分小计"+sum_xinzhuang+"，存量提档"+tidang+"户，4升5业务"+sishengwu+"户，存量提值小计"+sum_tidang+"，金融分期"+jinrong+"户，智能组网"+zuwang+"户，看家"+kanjia+"户，一次性费用收入"+yicixing+"元，合计折算积分"+sum_jifen.toFixed(2)+"，组均积分"+zufen.toFixed(2);
+                str = "【"+month+"月"+day+"日狮山中心三千兆行动】\n团队执行：服务网格8个，服务人数16人，服务组数8组，其中自有人员8人，上门服务客户"+shangmen+"户，铸铅"+zuqian+"户。\n业务成效：新装主卡"+zhuka+"户，其中315服务"+quanjia+"户，新装宽带"+kuangdai+"户，其中300M/500M新装"+Mkuangdai+"户，新装积分小计"+sum_xinzhuang+"，存量提档"+tidang+"户，4升5业务"+sishengwu+"户，存量提值小计"+sum_tidang+"元，宽带续约"+xuyue+"户，金融业务"+jinrong+"户，315意向服务"+yixiang+"户，智能组网"+zuwang+"户，一次性费用收入"+yicixing+"元，合计折算积分"+sum_jifen.toFixed(2)+"，组均积分"+zufen.toFixed(2);
             };
 
             // 以二进制方式打开文件
